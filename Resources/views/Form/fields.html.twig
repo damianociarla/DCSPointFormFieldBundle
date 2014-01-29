@@ -1,0 +1,13 @@
+{% block point_widget %}
+{% spaceless %}
+    {{ form_widget(form) }}
+
+    {% if functionFillFromGoogleResult is not null %}
+    <script type="text/javascript">
+    function {{ functionFillFromGoogleResult }} (place) {
+        document.getElementById('{{ form.vars.id }}').value = place.geometry.location.lng() + ',' + place.geometry.location.lat();
+    }
+    </script>
+    {% endif %}
+{% endspaceless %}
+{% endblock %}
