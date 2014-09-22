@@ -1,13 +1,20 @@
 {% block point_widget %}
-{% spaceless %}
-    {{ form_widget(form) }}
+    {% spaceless %}
+        {{ form_widget(form) }}
 
-    {% if functionFillFromGoogleResult is not null %}
-    <script type="text/javascript">
-    function {{ functionFillFromGoogleResult }} (place) {
-        document.getElementById('{{ form.vars.id }}').value = place.geometry.location.lng() + ',' + place.geometry.location.lat();
-    }
-    </script>
-    {% endif %}
-{% endspaceless %}
+        {% if functionFillFromGoogleResult is not null %}
+            <script type="text/javascript">
+                function {{ functionFillFromGoogleResult }} (place) {
+                    document.getElementById('{{ form.vars.id }}').value = place.geometry.location.lng() + ',' + place.geometry.location.lat();
+                }
+            </script>
+        {% endif %}
+        {% if functionEmptyWhenNoDigit is not null %}
+            <script type="text/javascript">
+                function {{ functionEmptyWhenNoDigit }} (element) {
+                    document.getElementById('{{ form.vars.id }}').value = '';
+                }
+            </script>
+        {% endif %}
+    {% endspaceless %}
 {% endblock %}

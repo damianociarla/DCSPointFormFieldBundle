@@ -12,3 +12,12 @@ web/bundles/*
 app/config/parameters.ini
 app/config/parameters.yml
 /nbproject/private/
+
+.idea
+.idea/*
+.idea/DCSPointFormFieldBundle.iml
+.idea/encodings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/scopes/scope_settings.xml
+.idea/vcs.xml

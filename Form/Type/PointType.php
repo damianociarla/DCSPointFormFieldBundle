@@ -22,6 +22,7 @@ class PointType extends AbstractType
     {
         $view->vars = array_merge($view->vars, array(
             'functionFillFromGoogleResult' => $options['functionFillFromGoogleResult'],
+            'functionEmptyWhenNoDigit' => $options['functionEmptyWhenNoDigit'],
         ));
     }
 
@@ -34,10 +35,12 @@ class PointType extends AbstractType
     {
         $resolver->setDefaults(array(
             'functionFillFromGoogleResult' => null,
+            'functionEmptyWhenNoDigit' => null,
         ));
 
         $resolver->setAllowedTypes(array(
             'functionFillFromGoogleResult' => array('string', 'null'),
+            'functionEmptyWhenNoDigit' => array('string', 'null'),
         ));
     }
 
